@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+#content {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background-image: url(../img/3425171.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+svg {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    fill: #fafafa;
+}
+
+.word {
+    color: #fafafa;
+    margin: 5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.34);
+    width: 30%;
+    height: 70%;
+    border-radius: 10px;
+}
+
+#logo {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+#inputs {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.input {
+    padding: 8px 28px;
+    border-radius: 10px;
+    width: 200px;
+    border: none;
+    background-color: #fafafa;
+    color: #000000;
+}
+
+.btn {
+    position: absolute;
+    border: none;
+    margin-top: 320px;
+    width: 50%;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.575);
+    border-radius: 20px;
+    color: #fafafa;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:active {
+    background-color: rgba(255, 255, 255, 0.34);
+}
+
+#iconOne:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: -160px;
+    bottom: 0;
+    width: 20px;
+    background: url(../svg/person_black_24dp.svg) center / contain no-repeat;
+}
+
+#iconTwo:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 55px;
+    bottom: 0;
+    width: 20px;
+    background: url(../svg/lock_black_24dp.svg) center / contain no-repeat;
+}
+
+#iconThree:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: -50px;
+    bottom: 0;
+    width: 20px;
+    background: url(../svg/lock_black_24dp.svg) center / contain no-repeat;
+}
+
+#iconFour:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 160px;
+    bottom: 0;
+    width: 19px;
+    background: url(../svg/badge_black_24dp.svg) center / contain no-repeat;
+}
+
+.btnInput {
+    position: absolute;
+    background: url(../svg/visibility_off_black_24dp.svg) center / contain no-repeat;
+    width: 28px;
+    height: 20px;
+    margin: 11px 0px 0px -40px;
+    border: none;
+}
+
+.your-class::-webkit-input-placeholder {
+    color: red
+}

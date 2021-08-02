@@ -925,6 +925,17 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
     #inputMusic {
         width: 100%;
     }
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 100%;
+        background: #9db2e2;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        border-radius: 4px;
+      }
     #thirdBox {
         display: flex;
         background-color: #161e31;
@@ -949,4 +960,15 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
     #imgBarMusicMobile{
         display: none;
     }
+    .sliderVolume {
+        -webkit-appearance: none;
+        width: 40%;
+        height: 9%;
+        background: #9db2e2;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        border-radius: 4px;
+      }
 }

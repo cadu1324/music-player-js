@@ -19,7 +19,6 @@ const getCookie = (tokenName) => {
   }
   return "";
 }
-
 const checkCookie = () => {
   let user = getCookie('accessToken')
   let userRefresh = getCookie('refreshToken')
@@ -111,10 +110,10 @@ const recommendedMusic = () => {
       })
       document.querySelectorAll('#svgContentOne').forEach((e) => {
         e.addEventListener('click', (event) => {
-          if(event.screenX < -200 && event.screenX > -580){
+          if(event.screenX > 900 && event.screenX < 1200){
             document.getElementById('sectionOne').scrollLeft += 100
           }
-          if(event.screenX < -1000){
+          if(event.screenX < 400){
             document.getElementById('sectionOne').scrollLeft += -100
           }
         })
@@ -160,10 +159,10 @@ const playlistMusic = () => {
       }
       document.querySelectorAll('#svgContentTwo').forEach((e) => {
           e.addEventListener('click', (event) => {
-            if(event.screenX < -200 && event.screenX > -580){
+            if(event.screenX > 900 && event.screenX < 1300){
               document.getElementById('sectionTwo').scrollLeft += 250
             }
-            if(event.screenX < -1000){
+            if(event.screenX < 400){
               document.getElementById('sectionTwo').scrollLeft += -250
             }
         })
@@ -348,6 +347,25 @@ const showSearch = () => {
   let classSearchBlock = document.querySelectorAll('.searchMainBlock')
   for(let a = 0; a < classSearchBlock.length; a++){
     classSearchBlock[a].style.display = 'block'
+  }
+}
+
+const showLibrary = () => {
+  let classHome = document.querySelectorAll('.spanWords')
+  for(let i = 0; i < classHome.length; i++){
+    classHome[i].style.display = 'none'
+  }
+  let classHomeBlock = document.querySelectorAll('.homeMainBlock')
+  for(let i = 0; i < classHomeBlock.length; i++){
+    classHomeBlock[i].style.display = 'none'
+  }
+  let classHomeFlex = document.querySelectorAll('.homeMainFlex')
+  for(let i = 0; i < classHomeFlex.length; i++){
+    classHomeFlex[i].style.display = 'none'
+  }
+  let classHomeNone = document.querySelectorAll('.homeMainNone')
+  for(let i = 0; i < classHomeNone.length; i++){
+    classHomeNone[i].style.flex = 'none'
   }
 }
 

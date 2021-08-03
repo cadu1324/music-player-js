@@ -197,23 +197,45 @@ const topMusic = () => {
 }
 topMusic()
 
-const musicRecommended = () => {
+const libraryMusic = () => {
   let user = getCookie('accessToken')
-    let musicURL = 'https://music-player-api1.herokuapp.com/music/recommended'
-    fetch(musicURL, {
-        method: 'GET',
-        headers: {
-          'Content-type': 'application/json',
-          'Authorization': `Bearer ${user}`
-        },  
-    })
-    .then((response) => {
-        return response.json()
-    })
-    .then((response, id) => {
-      window.location.href = response.musics[4].url
-    })
+  let libraryMusics = 'https://music-player-api1.herokuapp.com/playlist'
+  fetch(libraryMusics, {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization': `Bearer ${user}`
+    }
+  })
+  .then((response) => {
+    return response.json()
+  })
+  .then((response) => {
+    for (let i = 0; i < response.playlists.length; i++) {
+      let button = document.createElement('button')
+      button.className = 'btnLibraryMain homeMain'
+      
+      let imgButton = document.createElement('img')
+      imgButton.className = 'imgLibraryMain homeMain'
+      button.appendChild(imgButton)
+
+      let spanButton = document.createElement('span')
+      spanButton.className = 'spanLibraryWords homeMain'
+      button.appendChild(spanButton)
+
+      if(response.playlists[i].name.length > 5){
+        response.playlists[i].name = response.playlists[i].name.substring(0, 5) + "..."
+        
+      }
+      imgButton.src = response.playlists[i].imgUrl
+      spanButton.innerText = response.playlists[i].name
+      
+      document.getElementById('libraryMain').appendChild(button)
+    }
+  })
 }
+
+libraryMusic()
 
 const openOptions = () => {
   if(document.getElementById('buttonMenuMobileSize').style.width  < '25px'){
@@ -321,6 +343,7 @@ const showHome = () => {
   for(let a = 0; a < classSearchBlock.length; a++){
     classSearchBlock[a].style.display = 'none'
   }
+  document.getElementById('libraryMain').style.display = 'none'
 }
 
 const showSearch = () => {
@@ -348,6 +371,7 @@ const showSearch = () => {
   for(let a = 0; a < classSearchBlock.length; a++){
     classSearchBlock[a].style.display = 'block'
   }
+  document.getElementById('libraryMain').style.display = 'none'
 }
 
 const showLibrary = () => {
@@ -367,6 +391,15 @@ const showLibrary = () => {
   for(let i = 0; i < classHomeNone.length; i++){
     classHomeNone[i].style.flex = 'none'
   }
+  let classSearchFlex = document.querySelectorAll('.searchMainFlex')
+  for(let a = 0; a < classSearchFlex.length; a++){
+    classSearchFlex[a].style.display = 'none'
+  }
+  let classSearchBlock = document.querySelectorAll('.searchMainBlock')
+  for(let a = 0; a < classSearchBlock.length; a++){
+    classSearchBlock[a].style.display = 'none'
+  }
+  document.getElementById('libraryMain').style.display = 'flex'
 }
 
 const searchMusic = () => {
@@ -438,15 +471,15 @@ const playAndPause = () => {
     //volume
     audio.volume = document.getElementById('inputVolume').value
 
-    document.getElementById('currentDuration').innerText = Math.floor((parseInt(document.getElementById('audio').currentTime) / 60)) + ':' + Math.floor((document.getElementById('audio').currentTime) % 60)
+    document.getElementById('currentDuration').innerText = Math.floor((parseInt(document.getElementById('audio').currentTime) / 60)) + ' : ' + Math.floor((document.getElementById('audio').currentTime) % 60)
 
   }, 1000);
-  
-  document.getElementById('totalDuration').innerText = Math.floor((parseInt(document.getElementById('audio').duration) / 60)) + ':' + Math.floor((document.getElementById('audio').duration) % 60)
+
+  document.getElementById('totalDuration').innerText = Math.floor((parseInt(document.getElementById('audio').duration) / 60)) + ' : ' + Math.floor((document.getElementById('audio').duration) % 60)
 }
 let muteOrUnmute = false
 const changeVolumeIcon = () => {
-  let audio = document.getElementById('audio') 
+  
   if(muteOrUnmute == false){ 
     document.getElementById('btnVolume').innerHTML = '<svg class="svgVolume" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path d="M0 0h24v24H0z" fill="none"/><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>' 
     document.getElementById('inputVolume').value = 0

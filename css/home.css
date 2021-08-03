@@ -789,6 +789,42 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
     .searchMainBlock {
         display: none;
     }
+
+    #libraryMain{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        gap: 5%;
+        transition:  color ;
+    }
+    .btnLibraryMain{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 40%;
+        height: 20%;
+        border-radius: 4px;
+        background-color: #161e31;
+        border: none;
+        gap: 5%;
+    }
+
+    .imgLibraryMain{
+        width: 50%;
+        height: 80%;
+        border-radius: 4px;
+        box-shadow: 0px 0px 9px 0px #161e31;
+    }
+
+    .spanLibraryWords{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: rgba(234, 240, 255, 1);
+        ;
+        font-size: medium;
+    }
     /* Aside */
     aside {
         display: block;

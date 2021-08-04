@@ -441,7 +441,7 @@ const searchMusic = () => {
     }
   }) 
 }
-console.log(document.getElementById('sectionTwoSearch').style.backgroundColor)
+
 let playOrPause = false
 let startTimer = false
 let m = 0
@@ -492,7 +492,10 @@ const changeVolumeIcon = () => {
 }
 
 const openPlayerMobile = () => {
-  
+  document.getElementById('musicBar').style.display = 'none'
+  document.getElementsByTagName('nav')[0].style.display = 'none'
+  document.getElementsByTagName('main')[0].style.display = 'none'
+  document.getElementById('playingNow').style.display = 'block'
 }
 
 const searchMusicMobile = () => {

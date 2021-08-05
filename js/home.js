@@ -238,7 +238,6 @@ const libraryMusic = () => {
 libraryMusic()
 
 const openOptions = () => {
-  if(document.getElementById('buttonMenuMobileSize').style.width  < '25px'){
     let menu =  document.getElementById('optionsMobile')
     let open = menu.animate([
       {transform: 'translate(0, 0)'},
@@ -247,20 +246,9 @@ const openOptions = () => {
     open.addEventListener('finish', () => {
       menu.style.transform = 'translate(300px, 0)'
     })
-  }else{
-    let menu =  document.getElementById('optionsMobile')
-    let open = menu.animate([
-      {transform: 'translate(0, 0)'},
-      {transform: 'translate(600px, 0)'}
-    ], 500)
-    open.addEventListener('finish', () => {
-      menu.style.transform = 'translate(600px, 0)'
-    })
-  }
 }
 
 const closeOptions = () => {
-  if(document.getElementById('buttonMenuMobileSize').style.width  < '25px'){
     let menu = document.getElementById('optionsMobile')
     let close = menu.animate([
       {transform: 'translate(300px, 0)'},
@@ -269,16 +257,6 @@ const closeOptions = () => {
     close.addEventListener('finish', () => {
       menu.style.transform = 'translate(0, 0)'
     })
-  }else{
-    let menu = document.getElementById('optionsMobile')
-    let close = menu.animate([
-      {transform: 'translate(600px, 0)'},
-      {transform: 'translate(0, 0)'}
-    ], 500)
-    close.addEventListener('finish', () => {
-      menu.style.transform = 'translate(0, 0)'
-    })
-  }
 }
 
 const searchMenuMobile = () => {
@@ -492,10 +470,11 @@ const changeVolumeIcon = () => {
 }
 
 const openPlayerMobile = () => {
-  document.getElementById('musicBar').style.display = 'none'
-  document.getElementsByTagName('nav')[0].style.display = 'none'
-  document.getElementsByTagName('main')[0].style.display = 'none'
-  document.getElementById('playingNow').style.display = 'block'
+  document.getElementById('playingNow').style.visibility = 'visible'
+}
+
+const closePlayerMobile = () => {
+  document.getElementById('playingNow').style.visibility = 'hidden'
 }
 
 const searchMusicMobile = () => {

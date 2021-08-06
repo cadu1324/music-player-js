@@ -101,13 +101,13 @@
                             <span id="spanMobileBarArtist"></span>
                         </div>
                     </div>
-                    <button class="btnIconsMusic" id="skipPrevious">
+                    <button type="button"class="btnIconsMusic" id="skipPrevious" onclick="previousMusic()">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
                     </button>
                     <button class="btnIconsMusic pauseButton" id="pauseButton" type="button" onclick="playAndPause()">
                         <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  ><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg>
                     </button>
-                    <button class="btnIconsMusic" id="skipNext">
+                    <button type="button" class="btnIconsMusic" id="skipNext" onclick="nextMusic()">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
                     </button>
                     <audio id="audio" volume="10"></audio>
@@ -115,7 +115,7 @@
                 <div id="barMusicBar">
                     <div class="wordsMusicBar desktopSetup" id="currentDuration">00:00</div>
                     <div id="musicInputBar">
-                        <input class="slider" id="inputMusic" type="range" min="" max="" step="1" value="0">
+                        <input class="slider" id="inputMusic" type="range" min="0" max="" value="0">
                     </div>
                     <div class="wordsMusicBar desktopSetup" id="totalDuration">00:00</div>
                 </div>
@@ -153,16 +153,22 @@
                 <svg id="svgPlayingTwo" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" width="16px" fill="#8996B8"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z" fill-opacity="0.6"/></svg>
             </div>
             <div id="boxSpanPlayingNow">
-                <span>00:00</span>
-                <span>2:49</span>
+                <span id="currentTimePlaying">00:00</span>
+                <span id="durationPlaying">00:00</span>
             </div>
             <div id="boxBarInputPlaying">
-                <input id="inputPlayingNow" type="range">
+                <input id="inputPlayingNow" type="range" min="0" max="" step="1" value="0">
             </div>
             <div id="controlPlayingNow">
-                <svg xmlns="http://www.w3.org/2000/svg" height="34px" viewBox="0 0 24 24" width="34px" fill="#EAF0FF"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" height="34px" viewBox="0 0 24 24" width="34px" fill="#EAF0FF"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" height="34px" viewBox="0 0 24 24" width="34px" fill="#EAF0FF"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                <button type="button" onclick="previousMusic()" class="btnPlayingNowControls">
+                    <svg class="svgPlayingNowControls" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="#EAF0FF"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                </button>
+                <button type="button" onclick="playAndPause()" class="btnPlayingNowControls" id="pausePlaying">
+                    <svg class="svgPlayingNowControls" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="#EAF0FF"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg>
+                </button>
+                <button type="button" onclick="nextMusic()" class="btnPlayingNowControls">
+                    <svg class="svgPlayingNowControls" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="#EAF0FF"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                </button>               
             </div>
         </div>
     </div>

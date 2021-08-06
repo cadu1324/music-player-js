@@ -97,15 +97,17 @@ const recommendedMusic = () => {
         document.getElementById('sectionOne').appendChild(button)
       }
       document.querySelectorAll('.btnSectionOne').forEach((a) => {
-        a.addEventListener('click', (event) => {
+        a.addEventListener('click', () => {
           document.getElementById('audio').src = takeMusic[a.id]
           document.getElementById('imgBarMusic').src = takeImg[a.id]
           document.getElementById('imgMobileBar').src = takeImg[a.id]
+          document.getElementById('imgPlayingNow').src = takeImg[a.id]
           document.getElementById('spanNameMusicBar').innerText = takeName[a.id]
           document.getElementById('spanMobileBarName').innerText = takeName[a.id]
+          document.getElementById('nameMusicPlaying').innerText = takeName[a.id]
           document.getElementById('spanArtistMusicBar').innerText = takeArtist[a.id]
           document.getElementById('spanMobileBarArtist').innerText = takeArtist[a.id]
-   
+          document.getElementById('nameArtistPlaying').innerText = takeArtist[a.id]
         })
       })
       document.querySelectorAll('#svgContentOne').forEach((e) => {
@@ -421,40 +423,59 @@ const searchMusic = () => {
 }
 
 let playOrPause = false
-let startTimer = false
-let m = 0
-let s = 1
-let currentInputPercentage = 0
+let startInput
+
+const inputBehavior = () => {
+  inputMusic.value++
+  
+  //volume
+  audio.volume = document.getElementById('inputVolume').value
+
+  if((Math.floor((document.getElementById('audio').currentTime) % 60)) < 10){
+    document.getElementById('currentDuration').innerText = Math.floor((parseInt(document.getElementById('audio').currentTime) / 60)) + ' : 0' + Math.floor((document.getElementById('audio').currentTime) % 60)
+    document.getElementById('currentTimePlaying').innerText = Math.floor((parseInt(document.getElementById('audio').currentTime) / 60)) + ' : 0' + Math.floor((document.getElementById('audio').currentTime) % 60)
+  }else{
+    document.getElementById('currentDuration').innerText = Math.floor((parseInt(document.getElementById('audio').currentTime) / 60)) + ' : ' + Math.floor((document.getElementById('audio').currentTime) % 60)
+    document.getElementById('currentTimePlaying').innerText = Math.floor((parseInt(document.getElementById('audio').currentTime) / 60)) + ' : ' + Math.floor((document.getElementById('audio').currentTime) % 60)
+  }
+  inputMusic.addEventListener('click', (e) => {
+    audio.currentTime = inputMusic.value
+  })
+  console.log('value ' +document.getElementById('inputMusic').value)
+  console.log('max ' +  Math.floor(document.getElementById('inputMusic').max))
+  if(document.getElementById('inputMusic').value == Math.floor(document.getElementById('inputMusic').max)){
+    document.getElementById('inputMusic').value = 0
+    document.getElementById('inputPlayingNow').value = 0
+    nextMusic()
+  }
+  if((Math.floor(document.getElementById('audio').duration) % 60) < 10){
+    document.getElementById('durationPlaying').innerText = Math.floor((parseInt(document.getElementById('audio').duration) / 60)) + ' : 0' + Math.floor((document.getElementById('audio').duration) % 60)
+    document.getElementById('totalDuration').innerText = Math.floor((parseInt(document.getElementById('audio').duration) / 60)) + ' : 0' + Math.floor((document.getElementById('audio').duration) % 60)
+  }else{
+    document.getElementById('durationPlaying').innerText = Math.floor((parseInt(document.getElementById('audio').duration) / 60)) + ' : ' + Math.floor((document.getElementById('audio').duration) % 60)
+    document.getElementById('totalDuration').innerText = Math.floor((parseInt(document.getElementById('audio').duration) / 60)) + ' : ' + Math.floor((document.getElementById('audio').duration) % 60)
+  }
+}
 
 const playAndPause = () => {
-  
   let audio = document.getElementById('audio') 
-  
   //play/pause
+  document.getElementById('inputMusic').max = audio.duration
   if(playOrPause == false){ 
     audio.play()
-    document.getElementById('pauseButton').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>' 
+    document.getElementById('pauseButton').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>'
+    document.getElementById('pausePlaying').innerHTML = '<svg class="svgPlayingNowControls" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="#EAF0FF"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>'
+    startInput = setInterval(inputBehavior, 1000) 
   playOrPause = true
   }else{
     audio.pause()
     document.getElementById('pauseButton').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg>'
+    document.getElementById('pausePlaying').innerHTML = '<svg class="svgPlayingNowControls" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="#EAF0FF"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg>'
+    clearInterval(startInput)
     playOrPause = false
-  }
-
-  setInterval(() => {
-    
-    let currentPosition = audio.currentTime * 100 / audio.duration
-    document.getElementById('inputMusic').value = currentPosition
-
-    //volume
-    audio.volume = document.getElementById('inputVolume').value
-
-    document.getElementById('currentDuration').innerText = Math.floor((parseInt(document.getElementById('audio').currentTime) / 60)) + ' : ' + Math.floor((document.getElementById('audio').currentTime) % 60)
-
-  }, 1000);
-
-  document.getElementById('totalDuration').innerText = Math.floor((parseInt(document.getElementById('audio').duration) / 60)) + ' : ' + Math.floor((document.getElementById('audio').duration) % 60)
+  } 
 }
+
 let muteOrUnmute = false
 const changeVolumeIcon = () => {
   
@@ -467,6 +488,82 @@ const changeVolumeIcon = () => {
     document.getElementById('inputVolume').value = 0.5
     muteOrUnmute = false
   }
+}
+
+let musicStorage = []
+const previousMusic = () => {
+  musicStorage.reverse()
+  let user = getCookie('accessToken')
+  let music = musicStorage[0]
+  let urlSearch = `https://music-player-api1.herokuapp.com/music?search=${music}`
+  fetch(urlSearch, {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization': `Bearer ${user}`,
+    },
+  })
+  .then((response) =>{
+    return response.json()
+  }).then((response) => {
+    document.getElementById('spanNameMusicBar').innerText = response.musics[0].name
+    document.getElementById('imgBarMusic').src = response.musics[0].imgUrl
+    document.getElementById('spanArtistMusicBar').innerText = response.musics[0].artist
+    document.getElementById('audio').src = response.musics[0].url
+    document.getElementById('imgMobileBar').src = response.musics[0].imgUrl
+    document.getElementById('spanMobileBarName').innerText = response.musics[0].name
+    document.getElementById('spanMobileBarArtist').innerText = response.musics[0].artist
+    document.getElementById('imgPlayingNow').src = response.musics[0].imgUrl
+    document.getElementById('nameMusicPlaying').innerText = response.musics[0].name
+    document.getElementById('nameArtistPlaying').innerText = response.musics[0].artist
+  })
+}
+
+const nextMusic = () => {
+  let user = getCookie('accessToken')
+    let musicURL = 'https://music-player-api1.herokuapp.com/music/recommended'
+    fetch(musicURL, {
+        method: 'GET',
+        headers: {
+          'Content-type': 'application/json',
+          'Authorization': `Bearer ${user}`
+        },  
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((response) => {
+      let spanNameMusicBar = document.getElementById('spanNameMusicBar')
+      let randomMusic = []
+      let check = false
+      musicStorage.push(spanNameMusicBar.innerText)
+      function randomMusicGenerator(){
+        randomMusic.push(Math.floor(Math.random() * response.musics.length))
+        randomMusic.reverse()
+      }
+
+      do{
+        
+        randomMusicGenerator()
+        if(spanNameMusicBar.innerText != response.musics[randomMusic[0]].name){
+          document.getElementById('inputMusic').value = 0
+          document.getElementById('inputPlayingNow').value = 0
+          spanNameMusicBar.innerText = response.musics[randomMusic[0]].name
+          document.getElementById('imgBarMusic').src = response.musics[randomMusic[0]].imgUrl
+          document.getElementById('spanArtistMusicBar').innerText = response.musics[randomMusic[0]].artist
+          document.getElementById('audio').src = response.musics[randomMusic[0]].url
+          document.getElementById('imgMobileBar').src = response.musics[randomMusic[0]].imgUrl
+          document.getElementById('spanMobileBarName').innerText = response.musics[randomMusic[0]].name
+          document.getElementById('spanMobileBarArtist').innerText = response.musics[randomMusic[0]].artist
+          document.getElementById('imgPlayingNow').src = response.musics[randomMusic[0]].imgUrl
+          document.getElementById('nameMusicPlaying').innerText = response.musics[randomMusic[0]].name
+          document.getElementById('nameArtistPlaying').innerText = response.musics[randomMusic[0]].artist
+          document.getElementById('audio').play()
+          check = true
+        }
+      }while(check != true)
+      
+    })
 }
 
 const openPlayerMobile = () => {

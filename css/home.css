@@ -50,17 +50,17 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         z-index: 100000;
         margin-left: -300px;
     }
-    .svgOptionsOpenMobile{
+    .svgOptionsOpenMobile {
         width: 20px;
         fill: rgba(234, 240, 255, 1);
     }
-    .svgMenuMobile:active{
+    .svgMenuMobile:active {
         width: 20px;
     }
     .btnMenu {
         display: none;
     }
-    #inputSearchMobile{
+    #inputSearchMobile {
         display: none;
         position: absolute;
         margin-left: 24%;
@@ -78,7 +78,7 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         display: none;
     }
     /* Main section*/
-    #searchMain{
+    #searchMain {
         display: none;
     }
     .words {
@@ -181,14 +181,12 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         width: 100%;
         height: 100%;
     }
-
-    #searchMobile{
+    #searchMobile {
         display: none;
         width: 100vw;
         height: 100vh;
     }
-
-    .btnSearchMobile{
+    .btnSearchMobile {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -198,13 +196,12 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         border: none;
         background-color: #161e31;
     }
-
-    .imgSearchMobile{
+    .imgSearchMobile {
         margin: 5px;
         width: 40%;
         height: 90%;
     }
-    .spanSearchMobile{
+    .spanSearchMobile {
         display: block;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(234, 240, 255, 1);
@@ -212,15 +209,14 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         font-size: medium;
         margin-right: 30px;
     }
-    .spanSearchArtistMobile{
+    .spanSearchArtistMobile {
         display: block;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(165, 192, 255, 0.7);
         font-size: small;
         margin-right: 30px;
     }
-
-    #libraryMain{
+    #libraryMain {
         display: none;
         justify-content: center;
         align-items: center;
@@ -228,9 +224,9 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         width: 100%;
         height: 100%;
         gap: 5%;
-        transition:  color ;
+        transition: color;
     }
-    .btnLibraryMain{
+    .btnLibraryMain {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -241,15 +237,13 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         border: none;
         gap: 5%;
     }
-
-    .imgLibraryMain{
+    .imgLibraryMain {
         width: 50%;
         height: 80%;
         border-radius: 4px;
         box-shadow: 0px 0px 9px 0px #161e31;
     }
-
-    .spanLibraryWords{
+    .spanLibraryWords {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(234, 240, 255, 1);
         ;
@@ -264,20 +258,20 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         width: 100%;
         background-color: #091227;
     }
-    .desktopSetup{
+    .desktopSetup {
         display: none;
     }
-    #secondBox{
+    #secondBox {
         display: flex;
         width: 100%;
         height: 100%;
         justify-content: center;
         flex-direction: column-reverse;
     }
-    #inputMusic{
+    #inputMusic {
         width: 100%;
     }
-    #imgBarMusicMobile{
+    #imgBarMusicMobile {
         display: flex;
         position: absolute;
         justify-content: center;
@@ -286,18 +280,18 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         width: 80%;
         gap: 10px;
     }
-    #imgMobileBar{
+    #imgMobileBar {
         width: 30%;
         height: 50px;
     }
-    #spanMobileBarName{
+    #spanMobileBarName {
         display: block;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(234, 240, 255, 1);
         ;
         font-size: 60%;
     }
-    #spanMobileBarArtist{
+    #spanMobileBarArtist {
         display: block;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(165, 192, 255, 0.7);
@@ -305,36 +299,36 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         font-size: 60%;
         margin-top: 5%;
     }
-    #iconsMusicBar{
+    #iconsMusicBar {
         flex: none;
     }
-    #spanBarMobile{
+    #spanBarMobile {
         display: block;
         width: 300px;
-        height: 10px; 
+        height: 10px;
     }
-    #skipPrevious{
+    #skipPrevious {
         margin-left: 70%;
     }
-    .btnIconsMusic{
+    .btnIconsMusic {
         border: none;
         background-color: #091227;
         width: 24px;
         fill: rgba(234, 240, 255, 1);
     }
-    .svgOptionsOpenMobile{
+    .svgOptionsOpenMobile {
         fill: #ebf0ff;
         margin-right: 5%;
         margin-left: 7%;
         margin-top: 5%;
         fill-opacity: 0.6;
     }
-    ul{
+    ul {
         color: rgba(234, 240, 255, 1);
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     /*Playing now*/
-    #playingNow{
+    #playingNow {
         display: block;
         visibility: hidden;
         position: absolute;
@@ -344,20 +338,20 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         height: 100vh;
         transition: ease-in 0.5s all;
     }
-    #playingNav{
+    #playingNav {
         display: flex;
         align-items: center;
         gap: 24%;
         margin: 20px;
     }
-    #closePlayerMobile{
+    #closePlayerMobile {
         border: none;
         background-color: #091227;
     }
-    #svgClosePlayerMobile:active{
+    #svgClosePlayerMobile:active {
         width: 20px;
     }
-    #spanPlayingNow{
+    #spanPlayingNow {
         display: block;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(234, 240, 255, 1);
@@ -365,8 +359,7 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         font-size: medium;
         margin-right: 30px;
     }
-
-    #imgPlayingNowBox{
+    #imgPlayingNowBox {
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -374,47 +367,41 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         height: 35vh;
         margin-top: 40px;
     }
-
-    #imgPlayingNow{
+    #imgPlayingNow {
         width: 60%;
         height: 100%;
     }
-
-    #nameMusicPlayingBox{
+    #nameMusicPlayingBox {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 10px;
     }
-
-    #nameMusicPlaying{
+    #nameMusicPlaying {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(234, 240, 255, 1);
         ;
         font-size: large;
     }
-
-    #nameArtistPlaying{
+    #nameArtistPlaying {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(165, 192, 255, 0.7);
         font-size: small;
     }
-    #favoritePlayingNow{
+    #favoritePlayingNow {
         position: absolute;
         width: 20px;
         fill: #555B6A;
         margin: -40px 0px 0px 280px;
     }
-
-    #svgPlayingNow{
+    #svgPlayingNow {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 75%;
         margin-top: 20px;
     }
-
-    #boxSpanPlayingNow{
+    #boxSpanPlayingNow {
         display: flex;
         justify-content: center;
         gap: 65%;
@@ -434,14 +421,14 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         background-color: #fafafa;
         outline: none;
     }
-    #boxBarInputPlaying{
+    #boxBarInputPlaying {
         display: flex;
         justify-content: center;
     }
-    #inputPlayingNow{
+    #inputPlayingNow {
         margin-top: 20px;
     }
-    #controlPlayingNow{
+    #controlPlayingNow {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -449,16 +436,15 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         width: 100vw;
         height: 20vh;
     }
-    .btnPlayingNowControls{
+    .btnPlayingNowControls {
         border: none;
         background-color: #091227;
     }
-
-    .svgPlayingNowControls{
+    .svgPlayingNowControls {
         width: 34px;
         height: 34px;
     }
-    .svgPlayingNowControls:active{
+    .svgPlayingNowControls:active {
         width: 28px;
     }
 }
@@ -498,17 +484,17 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         z-index: 100000;
         margin-left: -600px;
     }
-    .svgOptionsOpenMobile{
+    .svgOptionsOpenMobile {
         width: 40px;
         fill: rgba(234, 240, 255, 1);
     }
-    .svgMenuMobile:active{
+    .svgMenuMobile:active {
         width: 40px;
     }
     .btnMenu {
         display: none;
     }
-    #inputSearchMobile{
+    #inputSearchMobile {
         display: none;
         position: absolute;
         margin-left: 25%;
@@ -522,13 +508,13 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         padding-left: 20px;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
-    #inputSearch{
+    #inputSearch {
         display: none;
     }
-    #searchButton{
+    #searchButton {
         display: none;
     }
-    li{
+    li {
         font-size: x-large;
     }
     /* Aside */
@@ -637,7 +623,7 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         width: 100%;
         height: 100%;
     }
-    #libraryMain{
+    #libraryMain {
         display: none;
         justify-content: center;
         align-items: center;
@@ -645,9 +631,9 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         width: 100%;
         height: 100%;
         gap: 5%;
-        transition:  color ;
+        transition: color;
     }
-    .btnLibraryMain{
+    .btnLibraryMain {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -658,15 +644,13 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         border: none;
         gap: 5%;
     }
-
-    .imgLibraryMain{
+    .imgLibraryMain {
         width: 50%;
         height: 80%;
         border-radius: 4px;
         box-shadow: 0px 0px 9px 0px #161e31;
     }
-
-    .spanLibraryWords{
+    .spanLibraryWords {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(234, 240, 255, 1);
         ;
@@ -681,21 +665,21 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         width: 100%;
         background-color: #091227;
     }
-    .desktopSetup{
+    .desktopSetup {
         display: none;
     }
-    #secondBox{
+    #secondBox {
         display: flex;
         width: 100%;
         height: 100%;
         justify-content: flex-end;
         flex-direction: column-reverse;
     }
-    #inputMusic{
+    #inputMusic {
         width: 100%;
         margin: 10px;
     }
-    #imgBarMusicMobile{
+    #imgBarMusicMobile {
         display: flex;
         position: absolute;
         justify-content: flex-start;
@@ -705,11 +689,11 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         height: 30px;
         margin-left: 20px;
     }
-    #imgMobileBar{
+    #imgMobileBar {
         width: 20%;
         height: 90px;
     }
-    #spanMobileBarName{
+    #spanMobileBarName {
         display: block;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(234, 240, 255, 1);
@@ -717,7 +701,7 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         font-size: 60%;
         font-size: x-large;
     }
-    #spanMobileBarArtist{
+    #spanMobileBarArtist {
         display: block;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(165, 192, 255, 0.7);
@@ -726,38 +710,49 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         margin-top: 5%;
         font-size: large;
     }
-    #openPlayerMobile{
+    #openPlayerMobile {
         width: 80%;
         margin-left: 24%;
     }
-    #iconsMusicBar{
+    #iconsMusicBar {
         flex: none;
     }
-    #spanBarMobile{
+    #spanBarMobile {
         display: block;
         width: 300px;
-        height: 10px; 
+        height: 10px;
     }
-    #skipPrevious{
+    #skipPrevious {
         width: 30px;
         height: 30px;
         margin-left: 80%;
     }
-    .btnIconsMusic{
+    .btnIconsMusic {
         border: none;
         background-color: #091227;
         width: 34px;
         fill: rgba(234, 240, 255, 1);
     }
-    .svgOptionsOpenMobile{
+    .svgOptionsOpenMobile {
         fill: rgba(234, 240, 255, 1);
         margin-right: 5%;
         margin-left: 7%;
         margin-top: 5%;
     }
-    ul{
+    ul {
         color: rgba(234, 240, 255, 1);
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    input[type=range] {
+        -webkit-appearance: none;
+        appearance: none;
+        display: inline-block;
+        width: 18em;
+        height: 0.1em;
+        position: relative;
+        border-radius: 5px;
+        background-color: #fafafa;
+        outline: none;
     }
 }
 
@@ -812,7 +807,7 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         fill: #9db2e2;
         color: #9db2e2;
     }
-    #inputSearchMobile{
+    #inputSearchMobile {
         display: none;
     }
     /* Main section*/
@@ -985,8 +980,7 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
     .searchMainBlock {
         display: none;
     }
-
-    #libraryMain{
+    #libraryMain {
         display: none;
         justify-content: center;
         align-items: center;
@@ -994,9 +988,9 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         width: 100%;
         height: 100%;
         gap: 5%;
-        transition:  color ;
+        transition: color;
     }
-    .btnLibraryMain{
+    .btnLibraryMain {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -1007,15 +1001,13 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         border: none;
         gap: 5%;
     }
-
-    .imgLibraryMain{
+    .imgLibraryMain {
         width: 50%;
         height: 80%;
         border-radius: 4px;
         box-shadow: 0px 0px 9px 0px #161e31;
     }
-
-    .spanLibraryWords{
+    .spanLibraryWords {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(234, 240, 255, 1);
         ;
@@ -1086,29 +1078,29 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         width: 30%;
         height: 100%;
     }
-    #imgBoxMusicBar{
+    #imgBoxMusicBar {
         display: flex;
         align-items: center;
         width: 100%;
         height: 100%;
     }
-    #imgBarMusic{
+    #imgBarMusic {
         width: 25%;
         height: 70%;
         margin: 7%;
     }
-    #spanMusicBar{
+    #spanMusicBar {
         display: flex;
         flex-direction: column;
     }
-    #spanNameMusicBar{
+    #spanNameMusicBar {
         display: block;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(234, 240, 255, 1);
         ;
         font-size: medium;
     }
-    #spanArtistMusicBar{
+    #spanArtistMusicBar {
         display: block;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(165, 192, 255, 0.7);
@@ -1121,19 +1113,19 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         width: 40%;
         height: 100%;
     }
-    #iconsMusicBar{
+    #iconsMusicBar {
         display: flex;
         justify-content: center;
         gap: 5%;
     }
-    .btnIconsMusic{
+    .btnIconsMusic {
         display: block;
         background-color: #161e31;
         fill: rgba(234, 240, 255, 1);
         border: none;
         margin-top: 2%;
     }
-    .btnIconsMusic:hover{
+    .btnIconsMusic:hover {
         fill: #9db2e2;
     }
     #barMusicBar {
@@ -1142,14 +1134,13 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         align-items: center;
         margin-top: 2%;
     }
-    .pauseButton{
+    .pauseButton {
         width: 50px;
     }
     #musicInputBar {
         width: 70%;
-        
     }
-    .wordsMusicBar{
+    .wordsMusicBar {
         display: block;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: rgba(234, 240, 255, 1);
@@ -1167,7 +1158,7 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         -webkit-transition: .2s;
         transition: opacity .2s;
         border-radius: 4px;
-      }
+    }
     #thirdBox {
         display: flex;
         background-color: #161e31;
@@ -1177,19 +1168,19 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         align-items: center;
         gap: 5%;
     }
-    #btnVolume{
+    #btnVolume {
         background-color: #161e31;
         border: none;
         fill: rgba(234, 240, 255, 1);
     }
-    .svgVolume{
+    .svgVolume {
         fill: rgba(234, 240, 255, 1);
         height: 20px;
     }
-    .svgVolume:hover{
+    .svgVolume:hover {
         fill: #9db2e2;
     }
-    #imgBarMusicMobile{
+    #imgBarMusicMobile {
         display: none;
     }
     .sliderVolume {
@@ -1202,12 +1193,10 @@ button, span, h1, h2, h3, h4, h5, h6, img, p {
         -webkit-transition: .2s;
         transition: opacity .2s;
         border-radius: 4px;
-      }
-
-    #playingNow{
+    }
+    #playingNow {
         display: none;
     }
-
     input[type=range] {
         -webkit-appearance: none;
         appearance: none;

@@ -1,3 +1,5 @@
+/** @format */
+
 const setCookie = (tokenName, accessToken, exhours) => {
   let d = new Date();
   d.setTime(d.getTime() + exhours * 60 * 60 * 1000);

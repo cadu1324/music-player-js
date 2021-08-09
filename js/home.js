@@ -438,7 +438,7 @@ let startInput;
 
 const inputBehavior = () => {
   inputMusic.value++;
-
+  inputPlayingNow.value++;
   //volume
   audio.volume = document.getElementById("inputVolume").value;
 
@@ -461,11 +461,15 @@ const inputBehavior = () => {
       " : " +
       Math.floor(document.getElementById("audio").currentTime % 60);
   }
-  inputMusic.addEventListener("click", (e) => {
+  inputMusic.addEventListener("click", () => {
     audio.currentTime = inputMusic.value;
   });
-  console.log("value " + document.getElementById("inputMusic").value);
-  console.log("max " + Math.floor(document.getElementById("inputMusic").max));
+  inputMusic.addEventListener("touchend", () => {
+    audio.currentTime = inputMusic.value;
+  });
+  inputPlayingNow.addEventListener("touchend", () => {
+    audio.currentTime = inputPlayingNow.value;
+  });
   if (
     document.getElementById("inputMusic").value ==
     Math.floor(document.getElementById("inputMusic").max)
@@ -550,6 +554,8 @@ const previousMusic = () => {
       return response.json();
     })
     .then((response) => {
+      document.getElementById("inputMusic").value = 0;
+      document.getElementById("inputPlayingNow").value = 0;
       document.getElementById("spanNameMusicBar").innerText =
         response.musics[0].name;
       document.getElementById("imgBarMusic").src = response.musics[0].imgUrl;
@@ -566,6 +572,7 @@ const previousMusic = () => {
         response.musics[0].name;
       document.getElementById("nameArtistPlaying").innerText =
         response.musics[0].artist;
+      document.getElementById("audio").play();
     });
 };
 
